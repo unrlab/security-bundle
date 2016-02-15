@@ -1,0 +1,30 @@
+{
+    "name" : "unrlab/security-bundle",
+    "description" : "A bundle that use a custom security layer for symfony",
+    "type" : "symfony-bundle",
+    "authors" : [{
+        "name" : "Jeremy Guido",
+        "email" : "dje.guido@gmail.com"
+    }],
+    "keywords" : ["security serialization REST bundle symfony"],
+    "license" : [
+        "Apache"
+    ],
+    "repositories" : [
+        {
+            "type": "git",
+            "url":  "git@github.com:unrlab/security-bundle.git"
+        }
+    ],
+    "require" : {
+        "php": ">=5.3.3",
+        "jms/serializer-bundle": "^1.1",
+        "unrlab/hal-support": "dev-master"
+    },
+    "autoload" : {
+        "psr-0" : {
+            "Unrlab\\Bundle\\SecurityBundle" : ""
+        }
+    },
+    "target-dir" : "Unrlab/Bundle/SecurityBundle"
+}

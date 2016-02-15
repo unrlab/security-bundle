@@ -1,0 +1,20 @@
+services:
+#    unr_lab_security.example:
+#        class: UnrLab\SecurityBundle\Example
+#        arguments: [@service_id, "plain_value", %parameter%]
+    unrlab_user.provider:
+        class: UnrLab\SecurityBundle\Service\UserProvider
+        arguments:
+            - "@doctrine.orm.default_entity_manager"
+            - "%security_user_repository%"
+
+    unrlab_security.listener:
+        class: UnrLab\SecurityBundle\Listener\SecurityListener
+        arguments:
+            - "@unrlab_user.provider"
+            - "@session"
+            - "%security_rest_header%"
+            - "%security_user_api_key%"
+            - "@doctrine.orm.default_entity_manager"
+        tags:
+            - { name: kernel.event_listener, event: kernel.request, method: onKernelRequest }
