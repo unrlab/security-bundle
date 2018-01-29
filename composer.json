@@ -8,7 +8,7 @@
     }],
     "keywords" : ["security serialization REST bundle symfony"],
     "license" : [
-        "Apache"
+        "GPL-V3"
     ],
     "repositories" : [
         {
